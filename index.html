@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>our first parsing page</title>
+
+	</head>
+	<body>
+	<?php
+	    $xml = simplexml_load_file('http://bash.org.ru/rss/');
+	    foreach ($xml->xpath('//item') as $item)
+	    {
+	    echo "<b><a href="$item->guid">$item->title 
+	    <br/></a></b>$item->description<hr/>";
+	    }
+    ?>
+	</body>
+
+</html>
